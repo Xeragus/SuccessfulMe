@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native';
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
+import AppNavigator from './navigation/AppNavigator'
+import { enableScreens } from 'react-native-screens'
+
+enableScreens()
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -24,21 +27,5 @@ export default function App() {
     )
   }
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.message}>This is the SuccessfulMe app!</Text>
-    </View>
-  );
+  return <AppNavigator />
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  message: {
-    fontFamily: 'open-sans-bold'
-  }
-});
